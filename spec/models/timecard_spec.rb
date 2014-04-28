@@ -1,5 +1,17 @@
 require 'spec_helper'
 
 describe Timecard do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "is invalid without a weekending date" do
+
+  end
+  it "is invalid without a date" do
+
+  end
+  it "is invalid without hours_worked" do
+
+  end
+  it "is invalid without a paycode" do
+
+  end
 end
