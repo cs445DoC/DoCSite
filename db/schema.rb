@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20140501181258) do
+
 
   create_table "fuel_usages", :force => true do |t|
     t.datetime "date"
     t.string   "license_plate"
     t.float    "mileage"
     t.float    "gallons"
+
 
 
   create_table "maintenance_records", :force => true do |t|
