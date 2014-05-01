@@ -1,4 +1,12 @@
 DoCSite::Application.routes.draw do
+  get "user/create"
+
+  get "user/update"
+
+  get "user/show"
+
+  get "user/destroy"
+
   get "maintenance_record/create"
 
   get "maintenance_record/update"
