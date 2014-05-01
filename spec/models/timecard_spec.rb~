@@ -6,6 +6,9 @@ let(:tc) { Timecard.create(weekending: Date.current, date: Date.current, hours_w
 
   it "is invalid without a weekending date" do
 
+	tc.weekending = nil
+	expect(tc.valid?).to eq(false)
+
   end
   it "is invalid without a date" do
 

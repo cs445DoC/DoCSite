@@ -11,12 +11,15 @@ let(:tc) { Timecard.create(weekending: Date.current, date: Date.current, hours_w
 
   end
   it "is invalid without a date" do
-
+	tc.date = nil
+	expect(tc.valid?).to eq(false)
   end
   it "is invalid without hours_worked" do
-
+	tc.hours_worked = nil
+	expect(tc.valid?).to eq(false)
   end
   it "is invalid without a paycode" do
-
+	tc.paycode = nil
+	expect(tc.valid?).to eq(false)
   end
 end
