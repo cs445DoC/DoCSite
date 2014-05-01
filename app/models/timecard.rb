@@ -4,6 +4,9 @@ class Timecard < ActiveRecord::Base
 
   attr_accessor :weekending, :date, :hours_worked, :paycode
 
+  # you need this line to be able to "mass assign"
+  attr_accessible :weekending, :date, :hours_worked, :paycode
+
   # each timecard belongs to one employee. An employee will have many timecards
   belongs_to :employee
 
