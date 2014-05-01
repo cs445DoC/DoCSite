@@ -5,6 +5,7 @@ class Timecard < ActiveRecord::Base
   attr_accessor :weekending, :date, :hours_worked, :paycode
 
   # you need this line to be able to "mass assign"
+  # http://stackoverflow.com/questions/10050797/rails-error-cant-mass-assign-protected-attributes
   attr_accessible :weekending, :date, :hours_worked, :paycode
 
   # each timecard belongs to one employee. An employee will have many timecards
@@ -19,6 +20,5 @@ class Timecard < ActiveRecord::Base
   def self.paycode_options
     %w(Vacation Sick-Leave Normal Holiday Overtime)
   end
-
 end
 
