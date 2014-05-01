@@ -1,10 +1,47 @@
-!!! 5
-%html
-  %head
-    %title Drake of Conklin
-    = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
-    = csrf_meta_tags
+/
+    Design by Bryant Smith
+    http://www.bryantsmith.com
+    http://www.aszx.net
+    email: templates [-at-] bryantsmith [-dot-] com
+    Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
 
-  %body
-    = yield
+    Name       : A Farewell to Colors
+    Description: One column, with top naviagation
+    Version    : 1.0
+    Released   : 20081230
+
+!!! Strict
+%html{xmlns: 'http://www.w3.org/1999/xhtml'}
+    %head
+        %meta{'http-equiv' => 'Content-Type', content: 'text/html; charset=utf-8'}
+        %link{rel: 'stylesheet', type: 'text/css', href: 'style.css'}
+        %title A Farewell to Colors by Bryant Smith
+
+    %body
+        %div{id: 'page'}
+		
+            %div{id: 'header'}
+                %h1 A Farewell to Color
+                %h2 An old school, black and white template created by Bryant Smith.
+            
+            %div{id: 'bar'}
+                %div{class: 'link'}= link_to 'home', '#'
+                %div{class: 'link'}= link_to 'about', '#'
+                %div{class: 'link'}= link_to 'portfolio', '#'
+                %div{class: 'link'}= link_to 'prices', '#'
+                %div{class: 'link'}= link_to 'products', '#'
+                %div{class: 'link'}= link_to 'faq', '#'
+                %div{class: 'link'}= link_to 'contact', '#'
+            %div{class: 'contentTitle'}
+                %h1 Template Usage
+            %div{class: 'contentText'}
+                = yield
+
+        %div{id: 'footer'}
+            = link_to 'web development', 'http://www.aszx.net'
+            by
+            = link_to 'bryant smith', 'http://www.bryantsmith.com'
+            |
+            = link_to 'valid xhtml', 'http://validator.w3.org/check?uri=referer'
+            |
+            = link_to 'valid css', 'http://jigsaw.w3.org/css-validator'
