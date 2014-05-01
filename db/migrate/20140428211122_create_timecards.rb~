@@ -3,7 +3,7 @@ class CreateTimecards < ActiveRecord::Migration
 	create_table :timecards do |t|
       	t.date :weekending
       	t.date :date
-      	t.float :hours_worked
+      	t.double :hours_worked
       	t.string :paycode
 
       	t.timestamp

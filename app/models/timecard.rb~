@@ -17,5 +17,4 @@ class Timecard < ActiveRecord::Base
     %w(Vacation Sick-Leave Normal Holiday Overtime)
   end
 
-end
 
