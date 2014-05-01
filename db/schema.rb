@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20140501181258) do
 
   create_table "fuel_usages", :force => true do |t|
@@ -18,6 +19,12 @@ ActiveRecord::Schema.define(:version => 20140501181258) do
     t.string   "license_plate"
     t.float    "mileage"
     t.float    "gallons"
+
+
+  create_table "maintenance_records", :force => true do |t|
+    t.date     "date"
+    t.string   "license_plate"
+    t.string   "description"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
