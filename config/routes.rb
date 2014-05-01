@@ -1,4 +1,12 @@
 DoCSite::Application.routes.draw do
+  get "maintenance_record/create"
+
+  get "maintenance_record/update"
+
+  get "maintenance_record/destroy"
+
+  get "maintenance_record/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
