@@ -1,0 +1,2 @@
+module FuelUsageHelper
+end
