@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
 
-  attr_accessor :boss_privelages, :currently_employed, :email,
+  attr_accessor :boss_privileges, :currently_employed, :email,
   :encrypted_password, :first_name, :last_name
 
-  attr_accessible :boss_privelages, :currently_employed, :email,
+  attr_accessible :boss_privileges, :currently_employed, :email,
   :encrypted_password, :first_name, :last_name
  
-  validates :boss_privelages, presence: true
+  validates :boss_privileges, presence: true
   validates :currently_employed, presence: true
   validates :email, presence: true
   validates :encrypted_password, presence: true

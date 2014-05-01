@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :encrypted_password
       t.boolean :currently_employed
-      t.boolean :boss_privelages
+      t.boolean :boss_privileges
 
       t.timestamps
     end
