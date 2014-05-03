@@ -1,15 +1,5 @@
 DoCSite::Application.routes.draw do
 
-  get "timecards/new"
-
-  get "timecards/create"
-
-  get "timecards/update"
-
-  get "timecards/destroy"
-
-  get "timecards/show"
-
   resources :fuel_usages
 
   resources :maintenance_records
@@ -19,6 +9,12 @@ DoCSite::Application.routes.draw do
   resources :users
 
   match '/login' => 'users#login'
+
+  get "sign_in" => "authentication#sign_in"
+  get "signed_out" => "authentication#signed_out"
+  get "change_password" => "authentication#change_password"
+  get "forgot_password" => "authentication#forgot_password"
+  get "password_sent" => "authentication#password_sent"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
