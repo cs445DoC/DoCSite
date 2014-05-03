@@ -77,6 +77,7 @@ class AuthenticationController < ApplicationController
   end
    
   def sign_in
+
     @user = User.new
   end
 
@@ -113,5 +114,4 @@ class AuthenticationController < ApplicationController
   def unauthorized
      render :status => :forbidden, :text => "You do not have permission to view this page. Press 'Back' in your browser. Contact your administrator if you have any questions or belieive you should not be seeing this page."
   end
-
 end

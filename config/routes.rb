@@ -16,6 +16,8 @@ DoCSite::Application.routes.draw do
   get "forgot_password" => "authentication#forgot_password"
   get "password_sent" => "authentication#password_sent"
 
+  post "sign_in" => "authentication#login"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
