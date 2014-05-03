@@ -1,21 +1,12 @@
 DoCSite::Application.routes.draw do
+  
+  resources :fuel_usage
+  
+  resources :maintenance_record
 
-  get "maintenance_record/create"
-
-  get "maintenance_record/update"
-
-  get "maintenance_record/destroy"
-
-  get "maintenance_record/show"
-
-  get "fuel_usage/create"
-
-  get "fuel_usage/update"
-
-  get "fuel_usage/show"
-
-  get "fuel_usage/destroy"
-
+  resources :timecard
+ 
+  resources :user
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
