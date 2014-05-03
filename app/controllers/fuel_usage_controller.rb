@@ -1,4 +1,10 @@
 class FuelUsageController < ApplicationController
+
+  #new displays form to initialize a new fuel_usage record
+  def new
+
+  end
+
   def create
   end
 
