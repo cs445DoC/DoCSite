@@ -1,0 +1,17 @@
+%h1 Create New Fuel Record
+
+= form_tag fuel_usages_path do
+
+  = label :fuel_usage, :date, 'Date'
+  = date_select :fuel_usage, :date
+
+  = label :fuel_usage, :license_plate, 'License Plate Number'
+  = text_field :fuel_usage, 'license_plate'
+
+  = label :fuel_usage, :mileage, 'Mileage'
+  = text_field :fuel_usage, 'mileage'
+
+  = label :fuel_usage, :gallons, 'Gallons'
+  = text_field :fuel_usage, 'gallons'
+
+  = submit_tag 'Save Record'
