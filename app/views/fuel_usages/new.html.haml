@@ -1,0 +1,17 @@
+%h1 Drake of Conklin, LLC - Fuel Worksheet
+
+= form_tag fuel_usages_path do
+  %p 
+  = label :fuel_usage, :date, 'Date'
+  = date_select :fuel_usage, :date
+  %p 
+  = label :fuel_usage, :license_plate, 'License Plate Number'
+  = text_field :fuel_usage, 'license_plate'
+  %p 
+  = label :fuel_usage, :mileage, 'Mileage'
+  = text_field :fuel_usage, 'mileage'
+  %p 
+  = label :fuel_usage, :gallons, 'Gallons'
+  = text_field :fuel_usage, 'gallons'
+  %p 
+  = submit_tag 'Submit Fuel Worksheet Entry'
