@@ -1,0 +1,30 @@
+%h1 Employee Timecard
+= form_tag timecards_path do
+  %p 
+  = label :timecard, :hours_worked, 'Hours Worked:'
+  = text_field :timecard, 'hours_worked', size:10
+
+  %p 
+  = label :timecard, :date, 'Work Date:'
+  = date_select :timecard, :date
+
+  %p
+    %i Type of Work Hours:
+
+    = label :timecard, :paycode, 'Normal'
+    = radio_button :timecard, 'paycode', true, checked:true
+
+    = label :timecard, :paycode, 'Vacation'
+    = radio_button :timecard, 'paycode', false
+
+    = label :timecard, :paycode, 'Sick-Leave'
+    = radio_button :timecard, 'paycode', false
+
+    = label :timecard, :paycode, 'Holiday'
+    = radio_button :timecard, 'paycode', false
+
+    = label :timecard, :paycode, 'Overtime'
+    = radio_button :timecard, 'paycode', false
+
+  %p 
+  = submit_tag 'Submit Timecard'

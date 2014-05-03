@@ -1,5 +1,15 @@
 DoCSite::Application.routes.draw do
 
+  get "timecards/new"
+
+  get "timecards/create"
+
+  get "timecards/update"
+
+  get "timecards/destroy"
+
+  get "timecards/show"
+
   resources :fuel_usages
 
   resources :maintenance_records
