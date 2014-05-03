@@ -1,12 +1,12 @@
 DoCSite::Application.routes.draw do
   
-  resources :fuel_usage
+  resources :fuel_usages
   
-  resources :maintenance_record
+  resources :maintenance_records
 
-  resources :timecard
+  resources :timecards
  
-  resources :user
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
