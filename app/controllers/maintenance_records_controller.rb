@@ -1,4 +1,9 @@
 class MaintenanceRecordsController < ApplicationController
+
+  #added method new for creating new maintenance records
+  def new
+  end
+
   def create
   end
 

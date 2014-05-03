@@ -1,0 +1,18 @@
+%h1 Vehicle Maintenance Report
+
+= form_tag maintenance_records_path do
+  %p 
+  = label :maintenance_record, :license_plate, 'License Plate Number of Serviced Vehicle:'
+  = text_field :maintenance_record, 'license_plate', size:15
+
+  %p 
+  = label :maintenance_record, :date, 'Date of Service:'
+  = date_select :maintenance_record, :date
+
+  %p 
+  = label :maintenance_record, :description, 'Service Description:'
+  %br
+  = text_area :maintenance_record, 'description', cols:50, rows:10
+
+  %p 
+  = submit_tag 'Save Maintenance Report'
