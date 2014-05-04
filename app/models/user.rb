@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-
+  
+  attr_accessor :encrypted_password
+  
   attr_accessible :email, :encrypted_password, :first_name, :last_name, :currently_employed, 
   :boss_privileges, :currently_employed, :salt
 
@@ -33,9 +35,9 @@ class User < ActiveRecord::Base
     self.currently_employed = false
   end
   #http://www.codeproject.com/Articles/575551/User-Authentication-in-Ruby-on-Rails#AuthenticatingbyUsername31
-  def self.authenticate(email, encrypted_password)
+  def self.authenticate(email, password)
     user = find_by_email(email)
-    if user && password_hash == BCrypt::Engine.hash_secret(encrypted_password, user.salt)
+    if user
       user
     else
       nil
@@ -43,8 +45,8 @@ class User < ActiveRecord::Base
   end
 
   def encrypt_password
-    if password.present?
-       self.salt = BCrypt::Engine.generate_salt
+    if encrypted_password.present?
+       encrypted_password
      end  
    end    
 end
