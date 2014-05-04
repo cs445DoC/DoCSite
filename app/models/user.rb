@@ -1,30 +1,41 @@
 class User < ActiveRecord::Base
 
-  attr_accessor :boss_privileges, :currently_employed, :email,
-  :encrypted_password, :first_name, :last_name, :salt, :password_confirmation
+  attr_accessible :email, :encrypted_password, :first_name, :last_name, :currently_employed, 
+  :boss_privileges, :currently_employed, :salt
 
-  attr_accessible :boss_privileges, :currently_employed, :email,
-  :encrypted_password, :first_name, :last_name, :salt, :password_confirmation
- 
-  before_save :encrypt_password
-
-  validates :boss_privileges, presence: true
-  validates :currently_employed, presence: true
-  validates_presence_of :email, :on => :create
-  validates_presence_of :encrypted_password, :on => :create
-  validates_presence_of :first_name, :on => :create
-  validates_presence_of :last_name, :on => :create
+  validates_presence_of :email
+  validates_presence_of :encrypted_password
+  validates_presence_of :last_name
 
   validates_uniqueness_of :email
 
-  def initialize(attributes = {})
+  def initialize(attributes = {}, options = {})
     super # must allow the active record to initialize!
+    attributes.each do |name, value|
+      send("#{name}=", value)
+    end
+    self.currently_employed = true
+    self.boss_privileges = false
+    self.salt = "trkreaDrakeSalt" + self.last_name
   end
 
+  def give_boss_privileges
+     self.boss_privileges = true
+     self.save
+  end
+  
+  def revoke_boss_privileges
+    self.boss_privileges = false
+    self.save
+  end
+
+  def revoke_employment
+    self.currently_employed = false
+  end
   #http://www.codeproject.com/Articles/575551/User-Authentication-in-Ruby-on-Rails#AuthenticatingbyUsername31
-  def self.authenticate(email, password)
+  def self.authenticate(email, encrypted_password)
     user = find_by_email(email)
-    if user && password_hash == BCrypt::Engine.hash_secret(password, user.salt)
+    if user && password_hash == BCrypt::Engine.hash_secret(encrypted_password, user.salt)
       user
     else
       nil
