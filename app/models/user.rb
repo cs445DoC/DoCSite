@@ -1,15 +1,18 @@
 class User < ActiveRecord::Base
   
-  attr_accessor :encrypted_password
-  
-  attr_accessible :email, :encrypted_password, :first_name, :last_name, :currently_employed, 
-  :boss_privileges, :currently_employed, :salt
+  attr_accessor :encrypted_password, :new_password, :new_password_confirmation
+   attr_accessible :email, :encrypted_password, :first_name, :last_name, :currently_employed, 
+  :boss_privileges, :currently_employed, :salt, :new_password, :new_password_confirmation
 
   validates_presence_of :email
+
   validates_presence_of :encrypted_password
   validates_presence_of :last_name
 
   validates_uniqueness_of :email
+  
+  #This validation runs only when the new_password field is not nil and not empty.
+  validates_confirmation_of :new_password, :if => Proc.new {|user| !user.new_password.nil? && !user.new_password.empty? }
 
   def initialize(attributes = {}, options = {})
     super # must allow the active record to initialize!

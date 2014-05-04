@@ -21,6 +21,10 @@ DoCSite::Application.routes.draw do
   post "sign_in" => "authentication#login"
   match "create_employee" => "authentication#register"
 
+
+  get "account_settings" => "authentication#account_settings"
+  put "account_settings" => "authentication#set_account_info"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -13,6 +13,7 @@ class AuthenticationController < ApplicationController
   end
 
   def set_account_info
+
     old_user = current_user
 
   # verify the current password by creating a new user record.
