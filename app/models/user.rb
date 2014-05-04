@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     end
     self.currently_employed = true
     self.boss_privileges = false
-    self.salt = "trkreaDrakeSalt" + self.last_name
+    self.salt = "trkreaDrakeSalt"
   end
 
   def give_boss_privileges

@@ -7,7 +7,6 @@ class AuthenticationController < ApplicationController
 
   def password_sent
   end
-<<<<<<< HEAD
 
   def account_settings
     @user = current_user
@@ -74,30 +73,10 @@ class AuthenticationController < ApplicationController
     else
       flash[:notice] = "An error occurred. The new employee was not created."
       redirect_to '/create_employee'
-=======
- 
-  def new_user
-    @user = User.new
-  end
-  
-  def register
-    @user = User.new(params[:user])
-    if @user.valid?
-      @user.save
-      session[:user_id] = @user.id
-      flash[:notice] = 'Welcome.'
-      redirect_to :root
-    else
-      render :action => "new_user"
->>>>>>> links to sign in page, view for user creation page. Deleted link to sign up page. About to attach user sign in
     end
   end
    
   def sign_in
-<<<<<<< HEAD
-
-=======
->>>>>>> links to sign in page, view for user creation page. Deleted link to sign up page. About to attach user sign in
     @user = User.new
   end
 
@@ -116,17 +95,15 @@ class AuthenticationController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:notice] = 'Welcome.'
-<<<<<<< HEAD
+
       redirect_to "/users/show"
-=======
-      redirect_to :root
->>>>>>> links to sign in page, view for user creation page. Deleted link to sign up page. About to attach user sign in
+
     else
         flash.now[:error] = 'Unknown user. Please check your username and password.'
         render :action => "sign_in"
     end
   end
-<<<<<<< HEAD
+
 
   def check_password_confirmation
     if params[:user][:new_password] == params[:user][:new_password_confirmation]
@@ -139,6 +116,4 @@ class AuthenticationController < ApplicationController
   def unauthorized
      render :status => :forbidden, :text => "You do not have permission to view this page. Press 'Back' in your browser. Contact your administrator if you have any questions or belieive you should not be seeing this page."
   end
-=======
->>>>>>> links to sign in page, view for user creation page. Deleted link to sign up page. About to attach user sign in
 end
