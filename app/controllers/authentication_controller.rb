@@ -44,6 +44,7 @@ class AuthenticationController < ApplicationController
   end
  
   def create_employee
+
     flash[:notice] = "Am I a Boss?: " + current_user.boss_privileges.to_s
 
     if !(current_user.boss_privileges)
