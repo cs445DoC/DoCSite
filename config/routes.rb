@@ -6,9 +6,12 @@ DoCSite::Application.routes.draw do
 
   resources :timecards
 
+  match 'users/new' => 'authentication#register'
+
   resources :users
 
   match '/login' => 'users#login'
+
 
   get "sign_in" => "authentication#sign_in"
   get "signed_out" => "authentication#signed_out"
@@ -17,6 +20,7 @@ DoCSite::Application.routes.draw do
   get "password_sent" => "authentication#password_sent"
 
   post "sign_in" => "authentication#login"
+  post "new_user" => "authentication#register"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

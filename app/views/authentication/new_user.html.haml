@@ -1,0 +1,27 @@
+%h1 Create New User
+
+= form_tag users_path do
+  %p 
+  = label :user, :first_name, 'First Name'
+  = text_field :user, 'first_name'
+
+  %p 
+  = label :user, :last_name, 'Last Name'
+  = text_field :user, 'last_name'
+
+  %p 
+  = label :user, :email, 'Email Address'
+  = text_field :email, 'email'
+
+
+  %p 
+  = label :user, :encrypted_password, 'User Password'
+  = password_field :user, :encrypted_password
+
+  %p 
+  = label :user, :encrypted_password, 'Confirm User Password'
+  = password_field :user, :password_confirmation
+  = show_field_error(@user, :password_confirmation)
+
+  %p 
+  = submit_tag 'Create User'
