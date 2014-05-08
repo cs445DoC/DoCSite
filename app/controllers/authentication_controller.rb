@@ -23,9 +23,14 @@ class AuthenticationController < ApplicationController
     old_user = current_user
 
   # verify the current password by creating a new user record.
+<<<<<<< HEAD
     @user = User.authenticate(old_user.email, params[:user][:password])
 >>>>>>> passwords get saved, encrypted now. huzzah
+=======
+    @user = User.authenticate(old_user.email, params[:user][:encrypted_password])
+>>>>>>> users can change their password
 
+   puts params[:user][:encrypted_password]
   # verify
     if @user.nil?
       @user = current_user
@@ -35,7 +40,7 @@ class AuthenticationController < ApplicationController
 
       render :action => "account_settings"
     else
-      if @user.valid?
+      if @user.valid?# && !(params[:user][:new_password]|| params[:user][:new_password].empty?)
         # If there is a new_password value, then we need to update the password.
 
 	if check_password_confirmation
@@ -47,6 +52,7 @@ class AuthenticationController < ApplicationController
           flash[:notice] = "The \"password confirmation\" field did not match \"new password\" field. Account setting have NOT been changed."
           render :action => "account_settings"
         end
+
       else
         flash[:notice] = "Account setting have NOT been changed. Please check your spelling."
 
@@ -72,7 +78,6 @@ class AuthenticationController < ApplicationController
   
   def register
     @user = User.new(:first_name => params[:user][:first_name], :last_name => params[:user][:last_name], :encrypted_password => params[:user][:encrypted_password], :email => params[:user][:email])
-
 
     @user.encrypted_password = BCrypt::Password.create(@user.encrypted_password)
 
