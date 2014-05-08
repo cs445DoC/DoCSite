@@ -113,10 +113,6 @@ class AuthenticationController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> users can change their passwords, better error messages and checking
   def check_password_confirmation
     if params[:user][:new_password] == params[:user][:new_password_confirmation]
       return true
@@ -125,10 +121,8 @@ class AuthenticationController < ApplicationController
     end 
   end
 
-<<<<<<< HEAD
   def unauthorized
      render :status => :forbidden, :text => "You do not have permission to view this page. Press 'Back' in your browser. Contact your administrator if you have any questions or belieive you should not be seeing this page."
   end
-=======
->>>>>>> users can change their passwords, better error messages and checking
+
 end
