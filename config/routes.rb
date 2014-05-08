@@ -1,4 +1,16 @@
 DoCSite::Application.routes.draw do
+<<<<<<< HEAD
+=======
+  get "user/create"
+
+  get "user/update"
+
+  get "user/show"
+
+  get "user/destroy"
+
+  get "maintenance_record/create"
+>>>>>>> c9cdd4f384f6142a554b8648a54cad5110ca2500
 
   get "timecards/new"
 
