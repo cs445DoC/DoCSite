@@ -13,24 +13,13 @@ class AuthenticationController < ApplicationController
   end
 
   def set_account_info
-<<<<<<< HEAD
 
     old_user = current_user
 
   # verify the current password by creating a new user record.
     @user = User.authenticate(old_user.email, params[:user][:encrypted_password])
-=======
-    old_user = current_user
 
-  # verify the current password by creating a new user record.
-<<<<<<< HEAD
-    @user = User.authenticate(old_user.email, params[:user][:password])
->>>>>>> passwords get saved, encrypted now. huzzah
-=======
-    @user = User.authenticate(old_user.email, params[:user][:encrypted_password])
->>>>>>> users can change their password
 
-   puts params[:user][:encrypted_password]
   # verify
     if @user.nil?
       @user = current_user
@@ -40,7 +29,7 @@ class AuthenticationController < ApplicationController
 
       render :action => "account_settings"
     else
-      if @user.valid?# && !(params[:user][:new_password]|| params[:user][:new_password].empty?)
+      if @user.valid?
         # If there is a new_password value, then we need to update the password.
 
 	if check_password_confirmation
@@ -55,6 +44,7 @@ class AuthenticationController < ApplicationController
 
       else
         flash[:notice] = "Account setting have NOT been changed. Please check your spelling."
+
 
         render :action => "account_settings"
       end
@@ -123,7 +113,10 @@ class AuthenticationController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> users can change their passwords, better error messages and checking
   def check_password_confirmation
     if params[:user][:new_password] == params[:user][:new_password_confirmation]
       return true
@@ -132,7 +125,10 @@ class AuthenticationController < ApplicationController
     end 
   end
 
+<<<<<<< HEAD
   def unauthorized
      render :status => :forbidden, :text => "You do not have permission to view this page. Press 'Back' in your browser. Contact your administrator if you have any questions or belieive you should not be seeing this page."
   end
+=======
+>>>>>>> users can change their passwords, better error messages and checking
 end
