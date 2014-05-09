@@ -1,12 +1,12 @@
 class CreateUsers < ActiveRecord::Migration
   def up
     create_table :users do |t|
-      t.string :first_name
-      t.string :last_name
-      t.string :email
-      t.string :encrypted_password
-      t.boolean :currently_employed
-      t.boolean :boss_privileges
+      t.column  :first_name, :string
+      t.column :last_name, :string
+      t.column :email, :string
+      t.column :encrypted_password, :string
+      t.column :currently_employed, :boolean, :default => true
+      t.column :boss_privileges, :boolean, :default => false
 
       t.timestamps
     end

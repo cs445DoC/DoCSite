@@ -13,20 +13,25 @@ class AuthenticationController < ApplicationController
   end
 
   def set_account_info
+
     old_user = current_user
 
   # verify the current password by creating a new user record.
     @user = User.authenticate(old_user.email, params[:user][:encrypted_password])
 
+
   # verify
     if @user.nil?
       @user = current_user
       @user.errors[:encrypted_password] = "Password is incorrect."
+
       flash[:notice] = "Password NOT changed: please make sure you enter your original password correctly."
+
       render :action => "account_settings"
     else
       if @user.valid?
         # If there is a new_password value, then we need to update the password.
+
 	if check_password_confirmation
           @user.encrypted_password = BCrypt::Password.create(params[:user][:new_password])
           @user.save
@@ -36,14 +41,18 @@ class AuthenticationController < ApplicationController
           flash[:notice] = "The \"password confirmation\" field did not match \"new password\" field. Account setting have NOT been changed."
           render :action => "account_settings"
         end
+
       else
         flash[:notice] = "Account setting have NOT been changed. Please check your spelling."
+
+
         render :action => "account_settings"
       end
     end
   end
  
   def create_employee
+
     flash[:notice] = "Am I a Boss?: " + current_user.boss_privileges.to_s
 
     if !(current_user.boss_privileges)
@@ -65,7 +74,7 @@ class AuthenticationController < ApplicationController
     params[:user].each do |p, v|
 	puts p + ", " + v
     end
- 
+
     if @user.valid? && @user.encrypted_password != nil
       @user.save
       flash[:notice] = 'User successfully created.'
@@ -95,7 +104,9 @@ class AuthenticationController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:notice] = 'Welcome.'
+
       redirect_to "/users/show"
+
     else
         flash.now[:error] = 'Unknown user. Please check your username and password.'
         render :action => "sign_in"

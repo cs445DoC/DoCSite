@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140501195109) do
+ActiveRecord::Schema.define(:version => 20140503190644) do
 
   create_table "fuel_usages", :force => true do |t|
     t.datetime "date"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20140501195109) do
     t.boolean  "boss_privileges"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "salt"
   end
 
 end

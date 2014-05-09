@@ -1,0 +1,13 @@
+%h1 Employee Login
+%h4 Only current employees can go past this point.
+
+= form_tag users_path do
+  %p
+  = label :user, :email, 'Email:'
+  = text_field :user, 'email'
+  %p
+  = label :user, :encrypted_password, 'Password:'
+  = password_field :user, 'encrypted_password'
+  %p
+  = submit_tag 'Login'
+

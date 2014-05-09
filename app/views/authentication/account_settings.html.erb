@@ -1,0 +1,16 @@
+<h1> Edit Your Account Information</h1>
+
+<%= form_for @user, :as => :user, :url => {:controller => 'authentication', :action => 'set_account_info'}, :method => :put do |f| %>
+  <p> 
+  <%= f.label 'Old Password:' %>
+  <%= f.text_field :encrypted_password %>
+  <p>
+  <p> 
+  <%= f.label 'New Password:' %>
+  <%= f.text_field :new_password %>
+  <p>
+    <%= f.label 'Password Confirmation:' %>
+  <%= f.text_field :new_password_confirmation %>
+  <p>
+  <%= f.submit 'Update Account Info' %>
+<% end %>
