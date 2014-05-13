@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe TimecardsController do
 
+  let(:tcid) { 1 }
+
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
@@ -18,21 +20,21 @@ describe TimecardsController do
 
   describe "GET 'update'" do
     it "returns http success" do
-      get 'update'
+      get 'update', :id => tcid
       response.should be_success
     end
   end
 
   describe "GET 'destroy'" do
     it "returns http success" do
-      get 'destroy'
+      get 'destroy', :id => tcid
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      get 'show', :id => tcid
       response.should be_success
     end
   end
