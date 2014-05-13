@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
 
+let (:uid) { 4 } 
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
@@ -18,21 +19,21 @@ describe UsersController do
 
   describe "GET 'update'" do
     it "returns http success" do
-      get 'update'
+      get 'update', :id => uid
       response.should be_success
     end
   end
 
   describe "GET 'destroy'" do
     it "returns http success" do
-      get 'destroy'
+      get 'destroy', :id => uid
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      get 'show', :id => uid
       response.should be_success
     end
   end
