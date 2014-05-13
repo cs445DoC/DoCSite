@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe MaintenanceRecordsController do
+let(:mrid) { 4 }
 
   describe "GET 'create'" do
     it "returns http success" do
@@ -11,21 +12,21 @@ describe MaintenanceRecordsController do
 
   describe "GET 'update'" do
     it "returns http success" do
-      get 'update'
+      get 'update', :id => mrid
       response.should be_success
     end
   end
 
   describe "GET 'destroy'" do
     it "returns http success" do
-      get 'destroy'
+      get 'destroy', :id => mrid
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      get 'show', :id => mrid
       response.should be_success
     end
   end
