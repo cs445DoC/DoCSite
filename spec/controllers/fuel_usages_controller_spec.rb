@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FuelUsageController do
+describe FuelUsagesController do
 
   describe "GET 'create'" do
     it "returns http success" do

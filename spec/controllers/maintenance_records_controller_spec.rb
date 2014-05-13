@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MaintenanceRecordController do
+describe MaintenanceRecordsController do
 
   describe "GET 'create'" do
     it "returns http success" do
