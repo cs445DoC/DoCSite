@@ -12,19 +12,19 @@
     %i Type of Work Hours:
 
     = label :timecard, :paycode, 'Normal'
-    = radio_button :timecard, 'paycode', true, checked:true
+    = radio_button :timecard, :paycode,'normal'
 
     = label :timecard, :paycode, 'Vacation'
-    = radio_button :timecard, 'paycode', false
+    = radio_button :timecard,:paycode, 'vacation'
 
     = label :timecard, :paycode, 'Sick-Leave'
-    = radio_button :timecard, 'paycode', false
+    = radio_button :timecard,:paycode, 'sick_leave'
 
     = label :timecard, :paycode, 'Holiday'
-    = radio_button :timecard, 'paycode', false
+    = radio_button :timecard,:paycode, 'holiday'
 
     = label :timecard, :paycode, 'Overtime'
-    = radio_button :timecard, 'paycode', false
+    = radio_button :timecard, :paycode,'overtime'
 
   %p 
   = submit_tag 'Submit Timecard'
