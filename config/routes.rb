@@ -17,6 +17,7 @@ DoCSite::Application.routes.draw do
   get "forgot_password" => "authentication#forgot_password"
   get "password_sent" => "authentication#password_sent"
   get "contact" => "main#contact"
+  get "job_application" => "main#job_application"
   
 
   post "sign_in" => "authentication#login"
