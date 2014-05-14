@@ -16,6 +16,7 @@ DoCSite::Application.routes.draw do
   get "change_password" => "authentication#change_password"
   get "forgot_password" => "authentication#forgot_password"
   get "password_sent" => "authentication#password_sent"
+  get "contact" => "main#contact"
   
 
   post "sign_in" => "authentication#login"
