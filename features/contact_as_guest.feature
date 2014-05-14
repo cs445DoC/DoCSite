@@ -1,8 +1,8 @@
-Feature: guest should be able to use contact form
+Feature: guest should be able to see contact form
 
   As a guest
-  So that I can contact the Drake of Conklin bosses
-  I want to use the contact form
+  So that I can contact organization
+  I want to view contact page
 
 Background: user is a guest
 

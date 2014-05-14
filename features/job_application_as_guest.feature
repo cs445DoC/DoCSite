@@ -1,8 +1,8 @@
-Feature: guest should be able to use job application form
+Feature: guest should be able to see application page
 
   As a guest
-  So that I can aquire a job at Drake of Conklin
-  I want to use the job application form
+  So that I can submit application
+  I want to view applications page
 
 Background: user is a guest
 

@@ -1,8 +1,8 @@
 Feature: guest should be able to see homepage
 
   As a guest
-  So that I can use the Drake of Conklin site
-  I want to view the homepage
+  So that I can view organization info
+  I want to view homepage
 
 Background: user is a guest
 
