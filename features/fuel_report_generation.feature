@@ -19,53 +19,18 @@ Feature: fuel report generation
         | boss@gmail.com | bosspass           | Scott     | true            |
 
   Scenario: access the fuel usage report page as a boss
-    Given I am on the login page
-    And I fill in "user_email" with "boss@gmail.com"
-    And I fill in "user_encrypted_password" with "bosspass"
-    And I press "Login"
-    Then I should be on the employee homepage
+    Given I am an employee with boss privileges
     And I follow "Fuel Usage Report"
     And I press "Generate Report"
+    Then I should see "Requested Fuel Report"
 
   Scenario: access the fuel usage report page as an employee (sad path)
-    Given I am on the login page
-    And I fill in "user_email" with "empl@gmail.com"
-    And I fill in "user_encrypted_password" with "emplpass"
-    And I press "Login"
-    Then I should be on the employee homepage
+    Given I am an employee without boss privileges
     And I follow "Fuel Usage Report"
-    And I should see "Employees Cannot Access Reports"
+    And I should see "Boss Privileges Required"
 
-  Scenario: submit fuel usage report page as a boss
-    Given I am on the login page
-    And I fill in "user_email" with "boss@gmail.com"
-    And I fill in "user_encrypted_password" with "bosspass"
-    And I press "Login"
-    Then I should be on the employee homepage
+  Scenario: access the fuel usage report page as a guest (sad path)
+    Given I am a guest
     And I follow "Fuel Usage Report"
-    And I press "File Report"
-    And I select "2014" from "fuel_usage_date_1i"
-    And I select "May" from "fuel_usage_date_2i"
-    And I select "14" from "fuel_usage_date_3i"
-    And I fill in "fuel_usage_license_plate" with "LIK34B0SS"
-    And I fill in "fuel_usage_mileage" with "100"
-    And I fill in "fuel_usage_gallons" with "10"
-    And I press "Submit Fuel Worksheet Entry"
-    And I should see "Report Saved"
+    And I should see "Boss Privileges Required"
 
-  Scenario: submit fuel usage report page as an employee
-    Given I am on the login page
-    And I fill in "user_email" with "empl@gmail.com"
-    And I fill in "user_encrypted_password" with "emplpass"
-    And I press "Login"
-    Then I should be on the employee homepage
-    And I follow "Fuel Usage Report"
-    And I press "File Report"
-    And I select "2014" from "fuel_usage_date_1i"
-    And I select "May" from "fuel_usage_date_2i"
-    And I select "14" from "fuel_usage_date_3i"
-    And I fill in "fuel_usage_license_plate" with "M1N10N"
-    And I fill in "fuel_usage_mileage" with "100"
-    And I fill in "fuel_usage_gallons" with "10"
-    And I press "Submit Fuel Worksheet Entry"
-    And I should see "Report Saved"
