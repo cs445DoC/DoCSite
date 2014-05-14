@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe MaintenanceRecordController do
-
+describe FuelUsagesController do
+ let(:fuid) { 4}
   describe "GET 'create'" do
     it "returns http success" do
       get 'create'
@@ -11,21 +11,21 @@ describe MaintenanceRecordController do
 
   describe "GET 'update'" do
     it "returns http success" do
-      get 'update'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
+      get 'update', :id => fuid
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      get 'show', :id => fuid
+      response.should be_success
+    end
+  end
+
+  describe "GET 'destroy'" do
+    it "returns http success" do
+      get 'destroy', :id => fuid
       response.should be_success
     end
   end
