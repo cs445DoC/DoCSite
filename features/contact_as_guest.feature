@@ -1,4 +1,4 @@
-Feature: guest should be able to see contact form
+Feature: contact page
 
   As a guest
   So that I can contact organization

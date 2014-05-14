@@ -1,4 +1,4 @@
-Feature: guest should be able to see homepage
+Feature: homepage
 
   As a guest
   So that I can view organization info

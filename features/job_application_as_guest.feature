@@ -1,4 +1,4 @@
-Feature: guest should be able to see application page
+Feature: application page
 
   As a guest
   So that I can submit application
