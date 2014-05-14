@@ -1,5 +1,3 @@
-# Add a declarative step here for populating the DB with movies.
-
 Given /the following employees exist/ do |employees_table|
   employees_table.hashes.each do |employee|
     # each returned element will be a hash whose key is the table header.
@@ -12,12 +10,25 @@ Given /the following employees exist/ do |employees_table|
     end
 
   end
+end
+
+Given /^I am an employee without boss privileges$/ do
+  u = User.find_by_boss_privileges(false)
+
+    step %{I am on the login page}
+    step %{I fill in "user_email" with "empl@gmail.com"}
+    step %{I fill in "user_encrypted_password" with "emplpass"}
+    step %{I press "Login"}
+    step %{I should be on the employee homepage}
 
 end
 
-Then /the director of "(.*)" should be "(.*)"/ do |mov, dir|
+Given /^I am an employee with boss privileges$/ do
+  u = User.find_by_boss_privileges(true)
 
-  movie = Movie.find_by_title(mov)
-  movie.director.equal?(dir)
-
+    step %{I am on the login page}
+    step %{I fill in "user_email" with "empl@gmail.com"}
+    step %{I fill in "user_encrypted_password" with "emplpass"}
+    step %{I press "Login"}
+    step %{I should be on the employee homepage}
 end

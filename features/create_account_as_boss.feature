@@ -8,8 +8,8 @@ Feature: employees should be able to log hours
   Background: employees in database
     
     Given the following employees exist:
-      | email          | encrypted_password | last_name | boss_privileges
-      | empl@gmail.com | emplpass           | Lucas     | true
+      | email          | encrypted_password | last_name | boss_privileges |
+      | empl@gmail.com | emplpass           | Lucas     | true            |
   
   Scenario: navigate to timecard form
     Given I am on the employee homepage
