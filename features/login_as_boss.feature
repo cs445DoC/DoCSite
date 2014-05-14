@@ -1,11 +1,11 @@
-Feature: employee log in
+Feature: boss log in
 
-  As an employee
-  So that I can submit submit reports
+  As a boss
+  So that I can generate reports
   I want to log in
 
 
-  Background: employees in database
+  Background: bosses in database
     
     Given the following employees exist:
       | email          | encrypted_password | last_name | boss_privileges |
@@ -22,9 +22,10 @@ Feature: employee log in
 
   Scenario: provide correct credentials and submit
     Given I am on the login page
-    And I fill in "user_email" with "empl@gmail.com"
-    And I fill in "user_encrypted_password" with "emplpass"
+    And I fill in "user_email" with "boss@gmail.com"
+    And I fill in "user_encrypted_password" with "bosspass"
     And I press "Login"
     Then I should be on the employee homepage
+    And I should see "Create New Employee"
 
     
