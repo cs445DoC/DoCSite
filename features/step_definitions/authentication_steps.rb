@@ -14,9 +14,3 @@ Given /the following employees exist/ do |employees_table|
 
 end
 
-Then /the director of "(.*)" should be "(.*)"/ do |mov, dir|
-
-  movie = Movie.find_by_title(mov)
-  movie.director.equal?(dir)
-
-end
