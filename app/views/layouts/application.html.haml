@@ -26,6 +26,8 @@
                 %h2 Delivers your Mail! What more did you expect?
             
             %div{id: 'bar'}
+                %div{class: 'link'}= link_to 'Home', '/'
+
                 -if !current_user
                     %div{class: 'link'}= link_to 'Contact Us', contact_path
                     %div{class: 'link'}= link_to 'Job Applications', '#'
