@@ -6,7 +6,7 @@ Feature: application page
 
 Background: user is a guest
 
-  Given the user is a guest
+  Given I am a guest
 
 Scenario: viewing the job application page
   Given I am on the job application page

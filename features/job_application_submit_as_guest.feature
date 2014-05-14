@@ -6,7 +6,7 @@ Feature: submit application
 
 Background: user is a guest
 
-  Given the user is a guest
+  Given I am a guest
 
 Scenario: submitting a valid application (happy path)
   Given I am on the job application page

@@ -6,7 +6,7 @@ Feature: homepage
 
 Background: user is a guest
 
-  Given the user is a guest
+  Given I am a guest
 
 Scenario: viewing the homepage
   Given I am on the homepage
