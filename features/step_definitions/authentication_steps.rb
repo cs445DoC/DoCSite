@@ -10,6 +10,7 @@ Given /the following employees exist/ do |employees_table|
       u.give_boss_privileges
       u.save
     end
+
   end
 
 end
