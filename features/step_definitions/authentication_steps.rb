@@ -13,22 +13,35 @@ Given /the following employees exist/ do |employees_table|
 end
 
 Given /^I am an employee without boss privileges$/ do
-  u = User.find_by_boss_privileges(false)
+  email = "employeeEmail@gmail.com"
+  pass = "password"
+  u = User.create( email: email, encrypted_password: BCrypt::Password.create(pass), last_name: "hobo")
 
     step %{I am on the login page}
-    step %{I fill in "user_email" with "empl@gmail.com"}
-    step %{I fill in "user_encrypted_password" with "emplpass"}
+    step %{I fill in "user_email" with "#{email}"}
+    step %{I fill in "user_encrypted_password" with "#{pass}"}
     step %{I press "Login"}
     step %{I should be on the employee homepage}
 
 end
 
 Given /^I am an employee with boss privileges$/ do
-  u = User.find_by_boss_privileges(true)
+  email = "bossEmail@gmail.com"
+  pass = "password"
+  u = User.create( email: email, encrypted_password: BCrypt::Password.create(pass), last_name: "hobo")
+  u.give_boss_privileges
+  u.save
 
     step %{I am on the login page}
-    step %{I fill in "user_email" with "empl@gmail.com"}
-    step %{I fill in "user_encrypted_password" with "emplpass"}
+    step %{I fill in "user_email" with "#{email}"}
+    step %{I fill in "user_encrypted_password" with "#{pass}"}
     step %{I press "Login"}
     step %{I should be on the employee homepage}
+end
+
+Given /^I am a guest$/ do
+
+ # as long as you haven't logged in using either of the above,
+ # you should be fine
+
 end
