@@ -27,6 +27,9 @@ module NavigationHelpers
     when /^the employee homepage$/
       '/users/show'
 
+    when /^the new fuel usage report page$/
+    new_fuel_usage_path(path)
+
     when /^the Similar Movies page for "(.*)"/
       search_path(Movie.find_by_title($1))
     else
