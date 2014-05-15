@@ -15,19 +15,19 @@ Feature: hours report generation
 
   Scenario: access the hours report page as a boss
     Given I am an employee with boss privileges
+    And I am on the employee homepage
+    And I follow "Generate Reports"
     And I follow "Hours Report"
     And I press "Generate Report"
     Then I should see "Requested Fuel Report"
 
   Scenario: access the hours report page as an employee
     Given I am an employee without boss privileges
-    And I follow "Hours Report"
-    And I press "Generate Report"
-    Then I should see "Requested Fuel Report"
+    And I am on the employee homepage
+    Then I should not see "Generate Reports"
 
   Scenario: access the hours report page as a guest
     Given I am a guest
-    And I follow "Hours Report"
-    And I press "Generate Report"
-    Then I should see "Requested Fuel Report"
+    And I am on the homepage
+    Then I should not see "Generate Reports"
 

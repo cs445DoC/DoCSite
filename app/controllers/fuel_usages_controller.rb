@@ -16,4 +16,7 @@ class FuelUsagesController < ApplicationController
 
   def destroy
   end
+
+  def generate_report
+  end
 end

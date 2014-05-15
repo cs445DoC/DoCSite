@@ -15,4 +15,7 @@ class TimecardsController < ApplicationController
 
   def show
   end
+
+  def generate_report
+  end
 end

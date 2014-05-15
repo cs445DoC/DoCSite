@@ -33,5 +33,7 @@ class MainController < ApplicationController
 
       render 'job_application'
     end
+
+  def generate_reports
   end
 end
