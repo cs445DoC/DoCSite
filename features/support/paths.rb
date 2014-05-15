@@ -32,6 +32,10 @@ module NavigationHelpers
 
     when /^the employee account creation page$/
       '/create_employee'
+
+    when /^the vehicle maintenance report page$/
+      new_maintenance_record_path(path)
+
     else
       begin
         page_name =~ /^the (.*) page$/
