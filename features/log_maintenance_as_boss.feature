@@ -27,8 +27,8 @@ Feature: log maintenance report
     And I select "May" from "maintenance_record_date_2i" 
     And I select "20" from "maintenance_record_date_3i" 
     And I fill in "maintenance_record_license_plate" with "455207"
-    And I fill in "maintenance_record_work_description" with "We did a lot of work. It was hard."
-    And I press "Submit Maintenance Report"
+    And I fill in "maintenance_record_description" with "We did a lot of work. It was hard."
+    And I press "Save Maintenance Report"
     Then I should be on the employee homepage
 
   Scenario: create a maintenance record with from too long ago
@@ -38,8 +38,8 @@ Feature: log maintenance report
     And I select "May" from "maintenance_record_date_2i" 
     And I select "20" from "maintenance_record_date_3i" 
     And I fill in "maintenance_record_license_plate" with "455207"
-    And I fill in "maintenance_record_work_description" with "We did a lot of work. It was hard."
-    And I press "Submit Maintenance Report"
+    And I fill in "maintenance_record_description" with "We did a lot of work. It was hard."
+    And I press "Save Maintenance Report"
     Then I should be on the maintenance report page
 
   Scenario: create a maintenance record with no license plate
@@ -48,8 +48,8 @@ Feature: log maintenance report
     And I select "2012" from "maintenance_record_date_1i" 
     And I select "May" from "maintenance_record_date_2i" 
     And I select "20" from "maintenance_record_date_3i" 
-    And I fill in "maintenance_record_work_description" with "We did a lot of work. It was hard."
-    And I press "Submit Maintenance Report"
+    And I fill in "maintenance_record_description" with "We did a lot of work. It was hard."
+    And I press "Save Maintenance Report"
     Then I should be on the maintenance report page
 
   Scenario: create a maintenance record with fno work description
@@ -59,6 +59,6 @@ Feature: log maintenance report
     And I select "May" from "maintenance_record_date_2i" 
     And I select "20" from "maintenance_record_date_3i" 
     And I fill in "maintenance_record_license_plate" with "455207"
-    And I press "Submit Maintenance Report"
+    And I press "Save Maintenance Report"
     Then I should be on the maintenance report page
 
