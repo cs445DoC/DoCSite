@@ -20,4 +20,5 @@ let(:fu) { FuelUsage.create(date: Date.current, license_plate: '370455V', mileag
 	fu.gallons = nil
 	expect(fu.valid?).to eq(false)
   end
+
 end
