@@ -39,4 +39,34 @@ describe TimecardsController do
     end
   end
 
+  describe "#new" do
+    it "should render view elements for timecard" do
+      
+    end
+  end
+
+  describe "#create" do
+    context "all field inputs are valid, successful submission" do
+      it "should be an successful submission since all fields are valid" do
+        
+      end
+    end
+    context "all field inputs are invalid, unsuccessful submission" do
+      it "should be an unsuccessful submission since some fields are invalid" do
+      end
+    end
+  end
+
+  describe "#update" do
+
+  end
+
+  describe "#destroy" do
+
+  end
+
+  describe "#show" do
+
+  end
+
 end
