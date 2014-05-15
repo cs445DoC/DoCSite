@@ -1,9 +1,11 @@
 class FuelUsagesController < ApplicationController
  
   def new
+    @fuel_usage = FuelUsage.new
   end
 
   def create
+    render 'users/show'
   end
 
   def update
