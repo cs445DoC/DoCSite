@@ -92,6 +92,7 @@ class AuthenticationController < ApplicationController
   def signed_out
     session[:user_id] = nil
     flash[:notice] = "You have been signed out."
+    render 'main/index'
   end
 
   def login
