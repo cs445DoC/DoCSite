@@ -33,8 +33,12 @@
                 -else
                     %div{class: 'link'}= link_to 'Logout', signed_out_path
                     %div{class: 'link'}= link_to 'Account Settings', account_settings_path
+                    %div{class: 'link'}= link_to 'Fill Out New Timecard', new_timecard_path
+                    %div{class: 'link'}= link_to 'New Fuel Worksheet Entry', new_fuel_usage_path
                     -if current_user.boss_privileges
                         %div{class: 'link'}= link_to 'Create New Employee', create_employee_path
+                        %div{class: 'link'}= link_to 'Create New Vehicle Maintenance Report', new_maintenance_record_path
+                        %div{class: 'link'}= link_to 'Generate Reports', create_employee_path
 
             %div{class: 'contentText'}
                 = yield
