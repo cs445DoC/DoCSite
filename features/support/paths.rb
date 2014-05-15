@@ -30,8 +30,8 @@ module NavigationHelpers
     when /^the new fuel usage report page$/
     new_fuel_usage_path(path)
 
-    when /^the Similar Movies page for "(.*)"/
-      search_path(Movie.find_by_title($1))
+    when /^the employee account creation page$/
+      '/create_employee'
     else
       begin
         page_name =~ /^the (.*) page$/
