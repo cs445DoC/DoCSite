@@ -34,5 +34,5 @@ Feature: fuel report generation
 
   Scenario: access the fuel usage report page as a guest (sad path)
     Given I am a guest
-    Then I should not see"Generate Reports"
+    Then I should not see "Generate Reports"
 
