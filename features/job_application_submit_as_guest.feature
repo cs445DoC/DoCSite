@@ -16,7 +16,7 @@ Scenario: submitting a valid application (happy path)
   And I check "Have you ever committed a crime?"
   And I check "Are you qualified to drive?"
   And I press "Submit Application"
-  Then I should be on the job application page
+  Then I should be on the homepage
   And I should see "Application submitted successfully!"
 
 Scenario: submitting an application without a name (sad path)
@@ -26,7 +26,7 @@ Scenario: submitting an application without a name (sad path)
   And I fill in "E-Mail" with "john.doe@fakemail.com"
   And I press "Submit Application"
   Then I should be on the job application page
-  And I should see "Please fill out all required fields:"
+  And I should see "Please fill out all required fields"
 
 Scenario: submitting an application without a phone (sad path)
   Given I am on the job application page
@@ -35,7 +35,7 @@ Scenario: submitting an application without a phone (sad path)
   And I fill in "E-Mail" with "john.doe@fakemail.com"
   And I press "Submit Application"
   Then I should be on the job application page
-  And I should see "Please fill out all required fields:"
+  And I should see "Please fill out all required fields"
 
 Scenario: submitting an application without an E-Mail (sad path)
   Given I am on the job application page
@@ -44,4 +44,4 @@ Scenario: submitting an application without an E-Mail (sad path)
   And I fill in "E-Mail" with ""
   And I press "Submit Application"
   Then I should be on the job application page
-  And I should see "Please fill out all required fields:"
+  And I should see "Please fill out all required fields"

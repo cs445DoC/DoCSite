@@ -38,9 +38,6 @@ module NavigationHelpers
 
     when /^the contact page$/
       contact_path
-
-    when /^the job application page$/
-      job_application_path
     else
       begin
         page_name =~ /^the (.*) page$/

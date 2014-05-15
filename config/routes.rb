@@ -21,6 +21,7 @@ DoCSite::Application.routes.draw do
   
 
   post "sign_in" => "authentication#login"
+  post "job_application" => "main#job_apply"
   match "create_employee" => "authentication#register"
 
 
