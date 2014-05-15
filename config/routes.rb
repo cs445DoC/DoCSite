@@ -10,6 +10,9 @@ DoCSite::Application.routes.draw do
 
   match '/login' => 'users#login'
 
+  get 'generate_reports' => 'main#generate_reports'
+  get '/fuel_usage_report' => 'fuel_usages#generate_report'
+
   get "create_employee" => "authentication#create_employee"
   get "sign_in" => "authentication#sign_in"
   get "signed_out" => "authentication#signed_out"

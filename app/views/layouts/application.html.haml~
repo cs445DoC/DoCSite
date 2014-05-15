@@ -38,7 +38,7 @@
                     -if current_user.boss_privileges
                         %div{class: 'link'}= link_to 'Create New Employee', create_employee_path
                         %div{class: 'link'}= link_to 'Create New Vehicle Maintenance Report', new_maintenance_record_path
-                        %div{class: 'link'}= link_to 'Generate Reports', create_employee_path
+                        %div{class: 'link'}= link_to 'Generate Reports', generate_reports_path
 
             %div{class: 'contentText'}
                 = yield

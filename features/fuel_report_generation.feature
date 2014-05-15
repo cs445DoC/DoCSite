@@ -20,17 +20,19 @@ Feature: fuel report generation
 
   Scenario: access the fuel usage report page as a boss
     Given I am an employee with boss privileges
+    And I am on the employee homepage
+    And I follow "Generate Reports"
     And I follow "Fuel Usage Report"
     And I press "Generate Report"
     Then I should see "Requested Fuel Report"
 
   Scenario: access the fuel usage report page as an employee (sad path)
     Given I am an employee without boss privileges
-    And I follow "Fuel Usage Report"
-    And I should see "Boss Privileges Required"
+    And I am on the employee homepage
+    Then I should not see "Generate Reports"
+    
 
   Scenario: access the fuel usage report page as a guest (sad path)
     Given I am a guest
-    And I follow "Fuel Usage Report"
-    And I should see "Boss Privileges Required"
+    Then I should not see"Generate Reports"
 
