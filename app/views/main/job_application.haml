@@ -1,29 +1,32 @@
+%p
+  %strong #{flash[:notice]}
+
 %p You can send a job application to Drake of Conklin via this form:
 
 = form_tag job_application_path, :method => :post do
 
   = label :job_application, :name, 'Name'
-  = text_field :job_application, 'name'
+  = text_field :job_application, 'name', value: @name
 
   %br
 
   = label :job_application, :phone, 'Phone'
-  = text_field :job_application, 'phone'
+  = text_field :job_application, 'phone', value: @phone
 
   %br
 
-  = label :job_application, :name, 'E-Mail'
-  = text_field :job_application, 'name'
+  = label :job_application, :email, 'E-Mail'
+  = text_field :job_application, 'email', value: @email
 
   %br
 
   = label :job_application, :crime, 'Have you ever committed a crime?'
-  = check_box_tag :job_application, 'crime'
+  = check_box_tag 'job_application[crime]', 'true', @crime
 
   %br
 
   = label :job_application, :drive, 'Are you qualified to drive?'
-  = check_box_tag :job_application, 'drive'
+  = check_box_tag 'job_application[drive]', 'true', @drive
 
   %br
 
