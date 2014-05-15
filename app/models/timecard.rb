@@ -2,7 +2,7 @@
 # Employees should be able to provide this information on a webform.
 class Timecard < ActiveRecord::Base
 
-  attr_accessor :weekending, :date, :hours_worked, :paycode
+  #attr_accessor :weekending, :date, :hours_worked, :paycode
 
   # you need this line to be able to "mass assign"
   # http://stackoverflow.com/questions/10050797/rails-error-cant-mass-assign-protected-attributes
