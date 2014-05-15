@@ -36,6 +36,11 @@ module NavigationHelpers
     when /^the vehicle maintenance report page$/
       new_maintenance_record_path(path)
 
+    when /^the contact page$/
+      contact_path
+
+    when /^the job application page$/
+      job_application_path
     else
       begin
         page_name =~ /^the (.*) page$/
