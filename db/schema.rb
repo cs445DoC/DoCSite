@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(:version => 20140503190644) do
     t.string   "last_name"
     t.string   "email"
     t.string   "encrypted_password"
-    t.boolean  "currently_employed"
-    t.boolean  "boss_privileges"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.boolean  "currently_employed", :default => true
+    t.boolean  "boss_privileges",    :default => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "salt"
   end
 
